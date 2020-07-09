@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    {{#each errors}}
+        <div class="error">
+           <p style="text-align: center;">{{text}}</p>
+        </div>
+      {{/each}}
+    <div id="signupbox" style="margin-top:35px;margin-bottom:35px" class="container mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div style="color:orange;font-weight:bold">Sign Up</div>
+                            <hr>
+                        </div>  
+                        <div class="panel-body" >
+                            <form action="/users" method="POST">
+                                 
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label"><i class="fas fa-user"></i>Names</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="names" placeholder="First and last name" value={{names}} >
+                                    </div>
+                                </div>
+                                  
+                                <div class="form-group">
+                                    <label  class="col-md-3 control-label"><i class="fas fa-envelope"></i>Email</label>
+                                    <div class="col-md-9">
+                                        <input type="email" class="form-control" name="email" placeholder="Email Address" value={{email}} >
+                                    </div>
+                                </div>
+                                    
+                                
+                                <div class="form-group">
+                                    <label  class="col-md-3 control-label"><i class="fas fa-key"></i>Password</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control" name="password"  placeholder="Password" value={{password}} >
+                                    </div>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label"><i class="fas fa-key"></i>Confirm Password</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control" name="password2" placeholder="Password" value={{password2}} >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                <hr>
+                                    <!-- Button -->                                        
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-signup" type="submit" class="btn btn-info mb-2"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                                         <p>Already have an account? <a  href="/login"> Sign in </a></p>  
+                                    </div>
+                                </div>
+                          
+                            </form>
+                         </div>
+                    </div>
+
+         </div>
+      </div>   
+</body>
+</html>

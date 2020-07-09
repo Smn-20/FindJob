@@ -1,0 +1,20 @@
+  
+<section id="gigs" class="container">
+    <h1>All Jobs</h1>
+    {{#each gigs}}
+      <div class="gig">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        <ul>
+            <li>Salary:{{budget}}</li>
+            <li><a href="mailto:{{email}}"><button class="btn btn-info"><i class="fas fa-envelope-open-text mr-2"></i>Apply Now</button> </a></li>
+        </ul>
+        <div class="tech"> 
+            <p style="font-size: 17px;">Technologies Needed: <span>{{technologies}}</span> </p>
+        </div>
+      </div>
+    {{else}} 
+    <p>No Jobs Available</p>
+    {{/each}}
+    
+</section>

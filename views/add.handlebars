@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="/css/style.css">
+  
+</head>
+
+<body>
+
+  <section id="add" class="container">
+    <div class="form-wrap">
+      <h1>Add A Job</h1>
+      <p class="Ps">Your contact email will be shared with registered users to apply to your Job</p>
+      {{#each errors}}
+        <div class="error">
+           <p>{{text}}</p>
+        </div>
+      {{/each}}
+      <form action="/jobs/add" method="POST">
+        <div class="input-group">
+          <label for="title">Job Title</label>
+          <input type="text" name="title" id="title" class="input-box" placeholder="eg.  Wordpress website developer, React developer"
+            maxlength="100" >
+        </div>
+        <div class="input-group">
+          <label for="technologies">Technologies Needed</label>
+          <input type="text" name="technologies" id="technologies" class="input-box" placeholder="eg. javascript, react, PHP, Python"
+          maxlength="100" >
+        </div>
+        <div class="input-group">
+          <label for="budget">Salary (Leave blank for unknown)</label>
+          <input type="text" name="budget" id="budget" class="input-box" placeholder="eg. 500, 5000, 10000">
+        </div>
+        <div class="input-group">
+          <label for="description">Job Description</label>
+          <textarea name="description" id="description" class="input-box" placeholder="Describe the details of the job"
+            rows="10" ></textarea>
+        </div>
+        <div class="input-group">
+          <label for="budget">Contact Email</label>
+          <input type="email" name="email" id="email" class="input-box" placeholder="Enter an email" >
+        </div>
+        <input type="submit" value="Add Job" class="btn btn-info">
+      </form>
+    </div>
+  </section>
+</body>
+
+</html>
